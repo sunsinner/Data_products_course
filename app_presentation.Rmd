@@ -1,0 +1,47 @@
+---
+title: "MPG PREDS"
+subtitle: "Linear Regression Model Builder Based in mtcars data" 
+author: "Jhon Sebastian Villarreal"
+date: "1/10/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## The app...
+
+**MPG preds** is a Shiny application that use the variables in the mtcars data and easily estimates a linear regression model with MPG as the outcome and the other variables as predictors.
+
+The app lets the users select the mtcars variables they prefer as predictors, as well as the regression parameters they like to see with the regression model.
+
+## How to use the app...
+MPG preds is very simple to use. As first step, users must select the predictors in the left side panel of the plataform. Options correspond to variables in the mtcars data, except the MPG variable.
+
+```{r, echo=FALSE, comment=""} 
+head(mtcars[,-1])  
+
+```  
+***
+
+Then, below the variable options, there are four estimation parameters the users can choose to see each of them:
+
+  1. Residuals plot
+  2. Residual Standard Error and Degrees of freedom of the model. 
+  3. Adjusted R-squared
+  4. F - statistic. 
+  
+## The right side panel...
+With the predictors and parameters chosen, the users can press the "Done" button to see the regression table in the right side of the panel. 
+
+
+This table will contain the coefficients, standard errors, the t-student value associated and the respective p-value. Below this table, depending the selections of the users, there will be the other estimation parameters. 
+
+
+***
+That's all! 
+Hope you enjoy the app!!
+
+Write me at *jhon.villarreal@correounivalle.edu.co*
+
