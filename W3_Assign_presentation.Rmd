@@ -1,0 +1,42 @@
+---
+title: "Week 3 Assignment from Developing Data Products Course"
+author: "Jhon Sebastian Villarreal"
+date: "1/11/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, echo = FALSE, message=FALSE}
+library(datasets)
+library(plotly)
+```
+
+## THE DATA
+
+This app shows a *carbon dioxide uptake rates* plot by plant and color by treatment, made with **CO2 data** in the *datasets* R package.
+
+```{r, echo=FALSE}
+data(CO2)
+head(CO2)
+```
+***
+This CO2 data frame has 84 rows and 5 columns of data from an experiment on the cold tolerance of the grass species Echinochloa crus-galli. 
+
+The CO2 uptake of six plants from Quebec and six plants from Mississippi was measured at several levels of ambient CO2 concentration. Half the plants of each type were chilled overnight before the experiment was conducted.
+
+## THE GRAPH
+
+```{r CO2, echo = TRUE, message = FALSE}
+data("CO2")
+ggplotly(ggplot(data = CO2, aes(x = Plant, y = uptake)) +
+            geom_point(aes(colour = Treatment)))
+```
+
+***
+In graph, plants identified with Q correspond to Canadian city of Quebec, while those identified with M correspond to Mississippi. As can be observed, carbon dioxide uptake rates from Quebec plants are greater than those from the Mississipi Plants, with just a few outliers in the experiment, maybe reflecting some part of the plant defense process against the cold.
+
+For both type of plants, those that were treated present lower carbon dioxide uptake rates than the nontreated, giving ideas about the cooling effectiveness of the treatment.
+
